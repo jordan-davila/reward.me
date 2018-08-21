@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\habit;
+use App\Task;
 use Illuminate\Http\Request;
 
-class HabitController extends Controller
+class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class HabitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\habit  $habit
+     * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(habit $habit)
+    public function show(Task $task)
     {
         //
     }
@@ -52,10 +52,10 @@ class HabitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\habit  $habit
+     * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(habit $habit)
+    public function edit(Task $task)
     {
         //
     }
@@ -64,10 +64,10 @@ class HabitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\habit  $habit
+     * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, habit $habit)
+    public function update(Request $request, Task $task)
     {
         //
     }
@@ -75,10 +75,10 @@ class HabitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\habit  $habit
+     * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(habit $habit)
+    public function destroy(Task $task)
     {
         //
     }

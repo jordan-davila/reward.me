@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Reward;
+use App\Point;
 use Illuminate\Http\Request;
 
-class RewardController extends Controller
+class PointController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class RewardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Reward  $reward
+     * @param  \App\Point  $point
      * @return \Illuminate\Http\Response
      */
-    public function show(Reward $reward)
+    public function show(Point $point)
     {
         //
     }
@@ -52,10 +52,10 @@ class RewardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Reward  $reward
+     * @param  \App\Point  $point
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reward $reward)
+    public function edit(Point $point)
     {
         //
     }
@@ -64,10 +64,10 @@ class RewardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Reward  $reward
+     * @param  \App\Point  $point
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reward $reward)
+    public function update(Request $request, Point $point)
     {
         //
     }
@@ -75,10 +75,10 @@ class RewardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Reward  $reward
+     * @param  \App\Point  $point
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reward $reward)
+    public function destroy(Point $point)
     {
         //
     }

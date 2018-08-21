@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHabitsTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateHabitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('habits', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->integer('points');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateHabitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('habits');
+        Schema::dropIfExists('tasks');
     }
 }
