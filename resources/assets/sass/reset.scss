@@ -1,0 +1,41 @@
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: $font_family;
+  	letter-spacing: 1px;
+}
+html, body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: $light_grey;
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+ol, ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+	text-decoration: none;
+	color: $grey;
+}
+h1, .logo {
+	color: $dark_purple;
+	font-weight: 900;
+}
+h1 {
+	margin-bottom: 15px;
+}
+p {
+	font-size: 0.8rem;
+	color: $grey;
+	line-height: 1.8
+}

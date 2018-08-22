@@ -1,14 +1,157 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 // Variables
 @import 'variables';
+@import 'reset';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Containers
+#main { width: 100%; }
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+// Flex
+.flex_ja_center {
+	justify-content: center;
+	align-items: center;
+}
+.flex_j_center { justify-content: center; }
+.flex_a_center { align-items: center; }
+.flex_j_between { justify-content: space-between; }
+.flex_j_around { justify-content: space-around; }
+.flex_c { flex-direction: column; } // Module Column
+.flex_r { flex-direction: row; } // Module Row
+.d_flex { display: flex; }
+$flexamounts: (1, 2, 3, 4, 5); // Adjust this to include the pixel amounts you need.
+@each $flex in $flexamounts {
+    .flex_#{$flex} {
+    	flex: #{$flex} 0;
+    }
+}
+// Widths & Heights
+.w_p_30 { width: 30%; }
+.w_p_50 { width: 50%; }
+.w_v_50 { width: 50vw; }
+.h_p_50 { height: 50%; }
+.h_v_50 { height: 50vh; }
+.w_p_100 { width: 100%; }
+.w_v_100 { width: 100vw; }
+.h_p_100 { height: 100%; }
+.h_v_100 { height: 100vh; }
+// Paddings & Margins
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right, all); // Leave this variable alone
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m_#{str-slice($side, 0, 1)}_#{$space} {
+    	@if $side == 'all' {
+    		margin: #{$space}px !important;
+    	} @else {
+      		margin-#{$side}: #{$space}px !important;
+      	}
+    }
+  
+    .p_#{str-slice($side, 0, 1)}_#{$space} {
+      @if $side == 'all' {
+    		padding: #{$space}px !important;
+    	} @else {
+      		padding-#{$side}: #{$space}px !important;
+      	}
+    }
+  }
+}
+// Positions
+.pos_a { position: absolute; }
+.pos_r { position: relative; }
+.z_1 { z-index: 1; }
+// Font
+.font_white { color: #fff; }
+.font_purple { color: $purple; }
+// Backgrounds
+.bg_white { background-color: #ffffff; }
+.bg_img {
+	background-size: cover;
+	background-position: center;
+}
+.bg_jog { background-image: url('../img/jog.jpg'); }
+.bg_food { background-image: url('../img/food.jpg'); }
+.bg_cover_purple {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: $dark_purple;
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+// Navs
+nav {
+	display: flex;
+	justify-content: space-between;
+	ul {
+		display: flex;
+		li {
+			margin-right: 10px;
+			&:last-child { margin-right: 0; }
+			a { font-size: 0.8rem; }
+		}
+	}
+}
+
+// Forms 
+.login_form, .register_form {
+	button {
+		width: 100%;
+	}
+	a {
+		color: $dark_purple;
+		font-size: 0.8rem;
+		margin-top: 20px;
+		width: 100%;
+		i {
+			font-style: normal;
+			color: $purple;
+		}
+	}
+}
+
+input {
+	width: 100%;
+	padding: 20px 0px;
+	border: none;
+	border-bottom: 1px solid $grey;
+	font-size: 0.8rem;
+	&:focus {
+		 outline: none;
+	}
+	&::placeholder { color: $grey; }
+}
+button {
+	background-color: $purple;
+	color: #ffffff;
+	border: none;
+	padding: 18px;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.passwordLink { color: $grey!important; }
+.error_box { // Used for forms
+	padding: 20px;
+	background-color: #e8667e;
+	color: #ffffff;
+	border-radius: 10px;
+	font-size: 0.8rem;
+	margin-top: 20px;
+}
+.copyright {
+	width: 100%;
+	text-align: right;
+	font-size: 0.8rem;
 }
