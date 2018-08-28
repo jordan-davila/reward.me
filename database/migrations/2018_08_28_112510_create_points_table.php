@@ -16,8 +16,8 @@ class CreatePointsTable extends Migration
         Schema::create('points', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('daily');
-            $table->integer('total');
+            $table->integer('daily')->default(0);
+            $table->integer('total')->default(0);
             $table->timestamps();
         });
     }

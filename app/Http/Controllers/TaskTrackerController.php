@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TaskTracker;
 use Illuminate\Http\Request;
+use App\Task;
 
 class TaskTrackerController extends Controller
 {
@@ -35,7 +36,21 @@ class TaskTrackerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'task_id'  => 'required'
+        ]);
+
+        auth()->user()->addTaskTracker(
+            $task_tracker = new TaskTracker(request(['task_id']))
+        );
+
+        $points = Task::find($task_tracker->task_id)->points;
+
+        auth()->user()->points->daily += $points;
+        auth()->user()->points->total += $points;
+        auth()->user()->points->save();
+
+        return redirect()->home();
     }
 
     /**

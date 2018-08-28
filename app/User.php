@@ -26,4 +26,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function points()
+    {
+        return $this->hasOne(Point::class);
+    }
+
+    public function task_trackers()
+    {
+        return $this->hasMany(TaskTracker::class);
+    }
+
+    public function usernameInitials()
+    {
+        return ucwords(substr($this->username, 0, 1));
+    }
+
+    public function addTaskTracker(TaskTracker $task_tracker)
+    {
+        $this->task_trackers()->save($task_tracker);
+    }
 }
